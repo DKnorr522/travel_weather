@@ -4,4 +4,4 @@ selenium
 pandas
 matplotlib
 seaborn
-webdrivermanager
+webdriver_manager
