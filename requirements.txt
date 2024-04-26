@@ -1,0 +1,6 @@
+streamlit
+bs4
+selenium
+pandas
+matplotlib
+seaborn
