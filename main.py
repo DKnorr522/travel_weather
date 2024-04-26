@@ -2,6 +2,7 @@ import streamlit as st
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from time import sleep
 from datetime import datetime, timedelta, time
 import pandas as pd
@@ -24,7 +25,15 @@ def get_forecast_soup(
     chrome_options = Options()
     chrome_options.add_argument("--disable-gpu")  # idea from https://selenium.streamlit.app/ on Apr 26, 2024
     chrome_options.add_argument("--headless")
-    browser = webdriver.Chrome(options=chrome_options)
+    # browser = webdriver.Chrome(options=chrome_options)
+    browser = webdriver.Chrome(
+        service=Service(
+            ChromeDriverManager(
+                chrome_type=ChromeType.CHROMIUM
+            ).install()
+        ),
+        options=chrome_options
+    )
     browser.get(url)
 
     sleep(1)
