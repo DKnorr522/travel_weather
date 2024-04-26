@@ -22,6 +22,7 @@ def get_forecast_soup(
         ) -> BeautifulSoup:
     url = f"https://www.wunderground.com/hourly/us/{state}/{city}/date/{day}"
     chrome_options = Options()
+    chrome_options.add_argument("--disable-gpu")  # idea from https://selenium.streamlit.app/ on Apr 26, 2024
     chrome_options.add_argument("--headless")
     browser = webdriver.Chrome(options=chrome_options)
     browser.get(url)
