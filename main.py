@@ -79,7 +79,6 @@ def extract_forecast(soup: BeautifulSoup, col_headers: list) -> dict:
 
     for hour in hours:
         time_field = hour.find("td")
-        print(f"{time_field = }")
         time_val = time_to_num(time_field.text.strip())
         forecast[time_val] = {
             col_headers[col_num+1]:
