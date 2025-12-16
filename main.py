@@ -278,4 +278,3 @@ colors = [
     "green",
     "blue"
 ]
-
