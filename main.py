@@ -29,11 +29,11 @@ def get_forecast_soup(
     chrome_options.add_argument("--headless")
     # browser = webdriver.Chrome(options=chrome_options)
     browser = webdriver.Chrome(
-        # service=Service(
-        #     ChromeDriverManager(
-        #         chrome_type=ChromeType.CHROMIUM
-        #     ).install()
-        # ),
+        service=Service(
+            ChromeDriverManager(
+                chrome_type=ChromeType.CHROMIUM
+            ).install()
+        ),
         options=chrome_options
     )
 
